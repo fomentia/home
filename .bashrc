@@ -22,7 +22,7 @@ source /usr/share/bash-completion/completions/git
 
 sway-wal() {
     wal -n -i "$@"
-    swaymsg "output - bg ${HOME}/.cache/wal/wal fill"
+    swaymsg "output - bg $@ fill"
 }
 
 gaps() {
