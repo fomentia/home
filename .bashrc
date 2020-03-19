@@ -34,4 +34,5 @@ e() {
     emacsclient -s ~/.emacs.d/server/server -nw ${1:-.}
 }
 
+export MOZ_ENABLE_WAYLAND=1
 export PATH="$PATH:/home/isaac/.local/bin/"
