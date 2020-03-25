@@ -35,7 +35,9 @@ e() {
 }
 
 export MOZ_ENABLE_WAYLAND=1
-export PATH="$PATH:/home/isaac/.local/bin/"
+export PATH="$PATH:$HOME/.local/bin/"
 
 export EDITOR="e"
 export VISUAL="e"
+
+source ./.bashrc_private
