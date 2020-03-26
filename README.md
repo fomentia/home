@@ -14,7 +14,7 @@
 * grim (screenshots)
 * pulseaudio-ctl
 * playerctl
-* i3status
+* waybar
 
 ### recommended
 
@@ -26,5 +26,4 @@
 * [theme spotify](https://github.com/khanhas/spicetify-cli)
 * theme firefox
 * theme mako
-* [make my bar not-so-basic](https://github.com/Alexays/Waybar)
 * add a lightswitch (system wide dark mode / light mode toggle)
