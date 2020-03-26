@@ -1,0 +1,12 @@
+/*
+!.gitignore
+!.bashrc
+!README.md
+
+!.config
+config/*
+!.config/i3status
+!.config/kitty
+!.config/sway
+!.config/wal
+!.config/waybar

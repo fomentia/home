@@ -1,0 +1,90 @@
+@import url("file:///home/isaac/.cache/wal/colors-waybar.css");
+
+* {
+    border: none;
+    border-radius: 0;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Inconsolata;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: @background;
+    border-bottom: 3px solid @color12;
+    color: @foreground;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: @foreground;
+    border-bottom: 3px solid transparent;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inherit;
+    border-bottom: 3px solid @foreground;
+}
+
+#workspaces button.focused {
+    border: 1px solid @foreground;
+    border-bottom: 4px solid @foreground;
+}
+
+#workspaces button.urgent {
+    background-color: @color11;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#custom-media,
+#idle_inhibitor {
+    padding: 5px;
+    margin: 0 4px;
+    color: @color0;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#custom-media,
+#idle_inhibitor {
+    background-color: @color12;
+}
+
+#battery.charging {
+    color: @color14;
+}
+
+#battery.critical:not(.charging) {
+    color: @color3;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#network.disconnected {
+    background-color: @color3;
+}
+
+#custom-media {
+    min-width: 100px;
+}

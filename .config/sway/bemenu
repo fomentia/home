@@ -1,0 +1,20 @@
+background_color=$(jq -r .special.background ~/.cache/wal/colors.json)
+foreground_color=$(jq -r .special.foreground ~/.cache/wal/colors.json)
+selection_color=$(jq -r .colors.color12 ~/.cache/wal/colors.json)
+
+BEMENU_BACKEND=wayland bemenu-run \
+    -i --ifne -n \
+    --prompt="What now?" \
+    --fn Inconsolata \
+    --tb=$background_color \
+    --fb=$background_color \
+    --nb=$background_color \
+    --hb=$background_color \
+    --sb=$background_color \
+    --scb=$background_color \
+    --tf=$selection_color \
+    --ff=$foreground_color \
+    --nf=$foreground_color \
+    --hf=$selection_color \
+    --sf=$selection_color \
+    --scf=$foreground_color
