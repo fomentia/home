@@ -10,7 +10,7 @@
 * kitty (terminal)
 * bemenu (launcher)
 * pywal (system-wide automatic theming)
-* mako (notification display)
+* mako (notification server)
 * grim (screenshots)
 * pulseaudio-ctl
 * playerctl

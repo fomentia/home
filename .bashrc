@@ -40,4 +40,4 @@ export PATH="$PATH:$HOME/.local/bin/"
 export EDITOR="e"
 export VISUAL="e"
 
-source ./.bashrc_private
+source $HOME/.bashrc_private
