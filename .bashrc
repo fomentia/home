@@ -44,7 +44,7 @@ __git_complete gp _git_push
 export MOZ_ENABLE_WAYLAND=1
 export PATH="$PATH:$HOME/.local/bin/"
 
-export EDITOR="e"
-export VISUAL="e"
+export EDITOR="emacsclient -s ~/.emacs.d/server/server -nw"
+export VISUAL="emacsclient -s ~/.emacs.d/server/server -nw"
 
 source $HOME/.bashrc_private
