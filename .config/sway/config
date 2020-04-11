@@ -46,6 +46,7 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     floating_modifier $mod normal
 
     bindsym $mod+Return exec $term
+    bindsym $mod+Shift+Return exec $term; exec "sleep 0.2s; swaymsg floating enable"
     bindsym $mod+Shift+q kill
     bindsym $mod+d exec $menu
 
