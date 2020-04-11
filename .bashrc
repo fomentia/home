@@ -34,6 +34,13 @@ e() {
     emacsclient -s ~/.emacs.d/server/server -nw ${1:-.}
 }
 
+alias g="git"
+__git_complete g _git
+alias gs="git status"
+__git_complete gs _git_status
+alias gp="git push --follow-tags"
+__git_complete gp _git_push
+
 export MOZ_ENABLE_WAYLAND=1
 export PATH="$PATH:$HOME/.local/bin/"
 
