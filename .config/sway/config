@@ -10,7 +10,7 @@ set $down j
 set $up k
 set $right l
 
-set $term kitty
+set $term termite
 
 set $menu ~/.config/sway/bemenu | xargs swaymsg exec --
 
