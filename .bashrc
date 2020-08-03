@@ -5,8 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+source ~/liquidprompt/liquidprompt
+
 alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
 
 alias grims='grim -g "$(slurp)" /home/isaac/Pictures/screenshots/$(date +"%d-%m-%y-%s-grim.png")'
 alias sptd='pkill spotifyd && spotifyd'
