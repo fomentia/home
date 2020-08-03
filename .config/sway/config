@@ -21,8 +21,6 @@ output * bg $wallpaper fill
 bindswitch --reload lid:on output $laptop disable
 bindswitch --reload lid:off output $laptop enable
 
-gaps inner 10
-
 default_border pixel 3
 
 # class          border   backgr.  text    indicator   child_border
@@ -51,17 +49,19 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     bindsym $mod+d exec $menu
 
     # screenshot with grim
-    bindsym $mod+Ctrl+Shift+4 exec grim -g "$(slurp)" /home/isaac/Pictures/screenshots/$(date +"%d-%m-%y-%s-grim.png")
+    bindsym $mod+Ctrl+Shift+4 exec grim -g "$(slurp)" /home/isaac/Pictures/screenshots/$(date +"%y-%m-%d-%s-grim.png")
 
     bindsym Ctrl+Mod1+l exec $lock
     bindsym $mod+Shift+c reload
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
 ### Audio
-    bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
-    bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
-    bindsym XF86AudioMute exec pulseaudio-ctl mute
-    bindsym XF86AudioPlay exec playerctl play-pause
+    bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up && notify-send -t 2000 "Volume" "Set to $(pulseaudio-ctl full-status | cut -d " " -f 1) percent"
+    bindsym XF86AudioLowerVolume exec pulseaudio-ctl down && notify-send -t 2000 "Volume" "Set to $(pulseaudio-ctl full-status | cut -d " " -f 1) percent"
+    bindsym XF86AudioMute exec pulseaudio-ctl mute && notify-send -t 2000 "Volume" $([ $(pulseaudio-ctl full-status | cut -d " " -f 2) == "yes" ] && echo "Muted" || echo "Unmuted")
+    bindsym XF86AudioPlay exec playerctl play-pause && notify-send -t 2000 "Playback" $(playerctl status)
+    bindsym XF86AudioNext exec playerctl next && notify-send -t 2000 "Next Track"
+    bindsym XF86AudioPrev exec playerctl previous && notify-send -t 2000 "Previous Track"
 
 ### Moving
     # Focus
@@ -141,4 +141,4 @@ exec mako
 
 # For the script used here, see:
 # https://github.com/swaywm/sway/blob/master/contrib/inactive-windows-transparency.py
-exec inactive-windows-transparency.py
+# exec inactive-windows-transparency.py
