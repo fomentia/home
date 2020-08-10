@@ -11,6 +11,7 @@ alias ls='ls --color=auto'
 
 alias grims='grim -g "$(slurp)" /home/isaac/Pictures/screenshots/$(date +"%d-%m-%y-%s-grim.png")'
 alias sptd='pkill spotifyd && spotifyd'
+alias maimclip='maim -s -u | xclip -selection clipboard -t image/png -i'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
